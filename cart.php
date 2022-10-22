@@ -16,6 +16,9 @@
     <div class="image">
       <img src="item-1.png" alt="" />
     </div>
+    <div class="image">
+      <img src="item-1.png" alt="" />
+    </div>
  
     <div class="description">
       <span>Common Projects</span>

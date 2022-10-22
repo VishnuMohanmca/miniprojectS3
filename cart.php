@@ -1,71 +1,134 @@
-<!DOCTYPE html>
 <html>
 
-<head>
-    <title>Shopping Cart UI</title>
-    <link rel="stylesheet" type="text/css" href="./cart.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
-</head>
-
-<body>
-    <div class="CartContainer">
-        <div class="Header">
-            <h3 class="Heading">Shopping Cart</h3>
-            <h5 class="Action">Remove all</h5>
-        </div>
-
-        <div class="Cart-Items">
-            <div class="image-box">
-                <img src="images/mob1.jfif" style={{ height="120px " }} />
-            </div>
-            <div class="about ">
-                <h1 class="title ">Vivo</h1>
-                <h3 class="subtitle ">Y21t</h3>
-                <img src="images/mob2.jfif " style={{ height=" 30px " }}/>
-            </div>
-            <div class="counter ">
-                <div class="btn ">+</div>
-                <div class="count ">2</div>
-                <div class="btn ">-</div>
-            </div>
-            <div class="prices ">
-                <div class="amount ">$2.99</div>
-                <div class="save "><u>Save for later</u></div>
-                <div class="remove "><u>Remove</u></div>
-            </div>
-        </div>
-
-        <div class="Cart-Items pad ">
-            <div class="image-box ">
-                <img src="images/mob3.jfif " style={{ height="120px " }} />
-            </div>
-            <div class="about ">
-                <h1 class="title ">Oppo</h1>
-                <h3 class="subtitle ">A1</h3>
-                <img src="images/mob4.jfif " style={{ height="30px " }}/>
-            </div>
-            <div class="counter ">
-                <div class="btn ">+</div>
-                <div class="count ">1</div>
-                <div class="btn ">-</div>
-            </div>
-            <div class="prices ">
-                <div class="amount ">$3.19</div>
-                <div class="save "><u>Save for later</u></div>
-                <div class="remove "><u>Remove</u></div>
-            </div>
-        </div>
-        <hr>
-        <div class="checkout ">
-            <div class="total ">
-                <div>
-                    <div class="Subtotal ">Sub-Total</div>
-                    <div class="items ">2 items</div>
-                </div>
-                <div class="total-amount ">$6.18</div>
-            </div>
-            <button class="button ">Checkout</button></div>
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    Shopping Bag
+  </div>
+ 
+  <!-- Product #1 -->
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
     </div>
-</body>
-
+ 
+    <div class="image">
+      <img src="item-1.png" alt="" />
+    </div>
+ 
+    <div class="description">
+      <span>Common Projects</span>
+      <span>Bball High</span>
+      <span>White</span>
+    </div>
+ 
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="minus.svg" alt="" />
+      </button>
+    </div>
+ 
+    <div class="total-price">$549</div>
+  </div>
+ 
+  <!-- Product #2 -->
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+ 
+    <div class="image">
+      <img src="item-2.png" alt=""/>
+    </div>
+ 
+    <div class="description">
+      <span>Maison Margiela</span>
+      <span>Future Sneakers</span>
+      <span>White</span>
+    </div>
+ 
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="minus.svg" alt="" />
+      </button>
+    </div>
+ 
+    <div class="total-price">$870</div>
+  </div>
+ 
+  <!-- Product #3 -->
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+ 
+    <div class="image">
+      <img src="item-3.png" alt="" />
+    </div>
+ 
+    <div class="description">
+      <span>Our Legacy</span>
+      <span>Brushed Scarf</span>
+      <span>Brown</span>
+    </div>
+ 
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="minus.svg" alt="" />
+      </button>
+    </div>
+ 
+    <div class="total-price">$349</div>
+  </div>
+</div>
+<script>
+    $('.like-btn').on('click', function() {
+   $(this).toggleClass('is-active');
+});
+$('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &amp;amp;gt; 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+ 
+  $input.val(value);
+ 
+});
+ 
+$('.plus-btn').on('click', function(e)) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &amp;amp;lt; 100) {
+        value = value + 1;
+    } else {
+        value = 100;
+    }
+ 
+    $input.val(value);
+};
+</script>
 </html>

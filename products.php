@@ -1,5 +1,9 @@
 <?php
     include 'dbconn.php';
+    $sql="select * from tbl_products";
+  
+    $num_per_page= 03;
+   
 ?>
 
 <!DOCTYPE html>
@@ -58,49 +62,7 @@
         </div>
     </div>
 
-    <header class="">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">
-                    <h2>MobiStore<em></em></h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="products.php">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="checkout.php">Checkout</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about.php">About Us</a>
-                                <a class="dropdown-item" href="blog.php">Blog</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                                <a class="dropdown-item" href="terms.php">Terms</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php include 'navigation.php'; ?>
 
     <!-- Page Content -->
     <div class="page-heading header-text">
@@ -151,6 +113,29 @@
                     }
                     else{
                         $product_sql= "SELECT * from tbl_products";
+
+                        $results_per_page = 15;
+
+                        // find out the number of results stored in database
+                        $sql='SELECT * FROM tbl_products';
+                        $result = mysqli_query($conn, $sql);
+                        $number_of_results = mysqli_num_rows($result);
+
+                        // determine number of total pages available
+                        $number_of_pages = ceil($number_of_results/$results_per_page);
+
+                        // determine which page number visitor is currently on
+                        if (!isset($_GET['page'])) {
+                        $page = 1;
+                        } else {
+                        $page = $_GET['page'];
+                        }
+
+                        // determine the sql LIMIT starting number for the results on the displaying page
+                        $this_page_first_result = ($page-1)*$results_per_page;
+
+                        // retrieve selected results from database and display them on page
+                        $product_sql='SELECT * FROM tbl_products LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
                     }
                     
                     $prod_query= mysqli_query($conn, $product_sql);
@@ -190,44 +175,44 @@
                 ?>
 
             </div>
-
-            <br>
-            <br>
-
             <nav>
                 <ul class="pagination pagination-lg justify-content-center">
-                    <li class="page-item">
+                    <!-- <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">«</span>
                             <span class="sr-only">Previous</span>
                         </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
+                    </li> -->
+
+                    <?php
+                        for ($page=1;$page<=$number_of_pages;$page++) {
+                            echo '<li class="page-item"><a class="page-link" href="products.php?page='.$page.'">'.$page.'</a></li>';
+                        }
+                    ?>
+                    
+                    <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                    <!-- <li class="page-item">
                         <a class="page-link" href="#" aria-label="Next">
                             <span aria-hidden="true">»</span>
                             <span class="sr-only">Next</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
-
             <br>
             <br>
             <br>
             <br>
         </div>
     </div>
-
     <!-- Footer Starts Here -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 footer-item">
                     <h4>Mobile Store</h4>
-                    <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+                    <!-- <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p> -->
                     <ul class="social-icons">
                         <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -236,13 +221,13 @@
                 </div>
                 <div class="col-md-3 footer-item">
                     <h4>Useful Links</h4>
-                    <ul class="menu-list">
+                    <!-- <ul class="menu-list">
                         <li><a href="#">Vivamus ut tellus mi</a></li>
                         <li><a href="#">Nulla nec cursus elit</a></li>
                         <li><a href="#">Vulputate sed nec</a></li>
                         <li><a href="#">Cursus augue hasellus</a></li>
                         <li><a href="#">Lacinia ac sapien</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="col-md-3 footer-item">
                     <h4>Additional Pages</h4>
@@ -292,7 +277,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2020  <a href="https://www.mobistore.com/">mobistore.com</a>
                     </p>
                 </div>
             </div>
@@ -320,6 +305,9 @@
         }
     </script>
 
-</body>
 
+
+
+    
+</body>
 </html>

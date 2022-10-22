@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Mobile Store Website Template</title>
+    <title>mobistore.com </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +58,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <h2>Mobile Store<em></em></h2>
+                    <h2>Mobi Store<em></em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -100,9 +100,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1><small><del><sup>Rs</sup>20000 </del></small> &nbsp; <sup>Rs</sup>17000</h1>
+                    <h1><small><del><sup></sup> </del></small> &nbsp; <sup></sup></h1>
                     <span>
-                Vivo Y21t
+                
             </span>
                 </div>
             </div>
@@ -114,7 +114,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div>
-                        <img src="../mobiletemplate/images/vivo-y21-000.jpg" alt="" class="img-fluid wc-image">
+                        <!-- <img src="../mobiletemplate/images/vivo-y21-000.jpg" alt="" class="img-fluid wc-image"> -->
                     </div>
 
                     <br>
@@ -122,19 +122,19 @@
                     <div class="row">
                         <div class="col-sm-4 col-6">
                             <div>
-                                <img src="../mobiletemplate/images/vivo.jfif" alt="" class="img-fluid">
+                                <!-- <img src="../mobiletemplate/images/vivo.jfif" alt="" class="img-fluid"> -->
                             </div>
                             <br>
                         </div>
                         <div class="col-sm-4 col-6">
                             <div>
-                                <img src="../mobiletemplate/images/vivo1.jfif" alt="" class="img-fluid">
+                                <!-- <img src="../mobiletemplate/images/vivo1.jfif" alt="" class="img-fluid"> -->
                             </div>
                             <br>
                         </div>
                         <div class="col-sm-4 col-6">
                             <div>
-                                <img src="../mobiletemplate/images/vivo2.jfif" alt="" class="img-fluid">
+                                <!-- <img src="../mobiletemplate/images/vivo2.jfif" alt="" class="img-fluid"> -->
                             </div>
                             <br>
                         </div>
@@ -150,8 +150,7 @@
                         </div>
 
                         <div class="content">
-                            <p>Vivo Y21 The phone comes with a 6.50-inch touchscreen display offering a resolution of 720x1600 pixels. Vivo Y21 is powered by an octa-core MediaTek Helio P35 (MT6765) processor. It comes with 4GB of RAM. The Vivo Y21 runs
-                                Android 11 and is powered by a 5000mAh battery.
+                            <p>
                             </p>
                         </div>
                     </div>
@@ -201,10 +200,10 @@
 
             <h4>Description</h4>
 
-            <p>The new Vivo Y21T is one of the most happening devices for be launched in recent times. Multitasking between all kinds of apps is piece of cake for the Y21T. It's powered by the Qualcomm Snapdragon 680 processor, and 4GB of RAM. The Vivo Y21T
+            <!-- <p>The new Vivo Y21T is one of the most happening devices for be launched in recent times. Multitasking between all kinds of apps is piece of cake for the Y21T. It's powered by the Qualcomm Snapdragon 680 processor, and 4GB of RAM. The Vivo Y21T
                 has a stunning 6.58-inch display running a high-resolution of 1080 x 2408px. At a time where photos span multiple megabytes and movies even more, the Y21T comes with ample space - 128GB.Storage can be expanded up to 1TB using the microSD
                 card slot. The rear camera setup consists of an impressive 50MP sensor, alongside two others, one for macros and the other for bokehs.
-            </p>
+            </p> -->
 
 
 
@@ -295,7 +294,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2022 Company Name - mobistore: <a href="https://mobistore.com/">mobistore.com</a>
+                        Copyright © 2022  <a href="https://mobistore.com/">mobistore.com</a>
                     </p>
                 </div>
             </div>

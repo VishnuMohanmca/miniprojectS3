@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Mobile Store Website Template</title>
+    <title>Mobistore.com </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Checkout</h1>
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <!-- <span>Lorem ipsum dolor sit amet.</span> -->
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="col-6 text-right">
-                            <strong>$ 128.00</strong>
+                            <!-- <strong>$ 128.00</strong> -->
                         </div>
                     </div>
                 </li>
@@ -131,7 +131,7 @@
                         </div>
 
                         <div class="col-6 text-right">
-                            <strong>$ 0.00</strong>
+                            <!-- <strong>$ 0.00</strong> -->
                         </div>
                     </div>
                 </li>
@@ -143,7 +143,7 @@
                         </div>
 
                         <div class="col-6 text-right">
-                            <strong>$ 10.00</strong>
+                            <!-- <strong>$ 10.00</strong> -->
                         </div>
                     </div>
                 </li>
@@ -155,7 +155,7 @@
                         </div>
 
                         <div class="col-6 text-right">
-                            <strong>$ 138.00</strong>
+                            <!-- <strong>$ 138.00</strong> -->
                         </div>
                     </div>
                 </li>
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="col-6 text-right">
-                            <strong>$ 20.00</strong>
+                            <!-- <strong>$ 20.00</strong> -->
                         </div>
                     </div>
                 </li>
@@ -294,8 +294,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 footer-item">
-                    <h4>Mobile Store</h4>
-                    <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+                    <h4>MobiStore</h4>
+                    <!-- <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p> -->
                     <ul class="social-icons">
                         <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -305,11 +305,11 @@
                 <div class="col-md-3 footer-item">
                     <h4>Useful Links</h4>
                     <ul class="menu-list">
-                        <li><a href="#">Vivamus ut tellus mi</a></li>
+                        <!-- <li><a href="#">Vivamus ut tellus mi</a></li>
                         <li><a href="#">Nulla nec cursus elit</a></li>
                         <li><a href="#">Vulputate sed nec</a></li>
                         <li><a href="#">Cursus augue hasellus</a></li>
-                        <li><a href="#">Lacinia ac sapien</a></li>
+                        <li><a href="#">Lacinia ac sapien</a></li> -->
                     </ul>
                 </div>
                 <div class="col-md-3 footer-item">
@@ -360,7 +360,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2020  <a href="https://www.mobistore.com/">mobistore.com</a>
                     </p>
                 </div>
             </div>

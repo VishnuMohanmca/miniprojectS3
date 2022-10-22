@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Mobile Store Website Template</title>
+    <title>mobistore.com </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,49 +53,7 @@
         </div>
     </div>
 
-    <header class="">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">
-                    <h2>MobiStore<em></em></h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.php">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="checkout.php">Checkout</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about.php">About Us</a>
-                                <a class="dropdown-item" href="blog.php">Blog</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                                <a class="dropdown-item" href="terms.php">Terms</a>
-                            </div>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="contact.php">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php include 'navigation.php'; ?>
 
     <!-- Page Content -->
     <div class="page-heading header-text">
@@ -103,7 +61,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Contact Us</h1>
-                    <span>feel free to send us a message now!</span>
+                    <!-- <span>feel free to send us a message now!</span> -->
                 </div>
             </div>
         </div>
@@ -116,23 +74,23 @@
                     <div class="contact-item">
                         <i class="fa fa-phone"></i>
                         <h4>Phone</h4>
-                        <p>Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate nec cursus augue.</p>
-                        <a href="#">+1 333 4040 5566</a>
+                        <p></p>
+                        <a href="#">+91 7025614019</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="contact-item">
                         <i class="fa fa-envelope"></i>
                         <h4>Email</h4>
-                        <p>Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate nec cursus augue.</p>
-                        <a href="#">contact@company.com</a>
+                        <p></p>
+                        <a href="#">mobistore@gmail.com.com</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="contact-item">
                         <i class="fa fa-map-marker"></i>
                         <h4>Location</h4>
-                        <p>212 Barrington Court New York str <br> USA</p>
+                        <p>ponkunnam  <br> kerala</p>
                         <a href="#">View on Google Maps</a>
                     </div>
                 </div>
@@ -146,7 +104,7 @@
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>Send us a <em>message</em></h2>
-                        <span>Suspendisse a ante in neque iaculis lacinia</span>
+                        <!-- <span>Suspendisse a ante in neque iaculis lacinia</span> -->
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -201,8 +159,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 footer-item">
-                    <h4>Mobile Store</h4>
-                    <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+                    <h4>MobiStore</h4>
+                    <!-- <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p> -->
                     <ul class="social-icons">
                         <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -212,11 +170,11 @@
                 <div class="col-md-4 footer-item">
                     <h4>Useful Links</h4>
                     <ul class="menu-list">
-                        <li><a href="#">Vivamus ut tellus mi</a></li>
+                        <!-- <li><a href="#">Vivamus ut tellus mi</a></li>
                         <li><a href="#">Nulla nec cursus elit</a></li>
                         <li><a href="#">Vulputate sed nec</a></li>
                         <li><a href="#">Cursus augue hasellus</a></li>
-                        <li><a href="#">Lacinia ac sapien</a></li>
+                        <li><a href="#">Lacinia ac sapien</a></li> -->
                     </ul>
                 </div>
                 <div class="col-md-4 footer-item">
@@ -238,7 +196,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2020 : <a href="https://www.mobistore.com/">PHPJabbers.com</a>
                     </p>
                 </div>
             </div>

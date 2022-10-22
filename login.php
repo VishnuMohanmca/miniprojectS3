@@ -35,7 +35,7 @@ if(isset($_SESSION['islogged'])){
     {
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
-        $uid = $_POST['uid'];
+        $email = $_POST['email'];
         $lastname= $_POST['lastname'];
         $firstname = $_POST['firstname'];
         $name= $firstname." ".$lastname;
@@ -45,19 +45,32 @@ if(isset($_SESSION['islogged'])){
         $pass=md5($password);
         $role=$_POST['role'];
         $status=1;
-        $sql1 = "INSERT INTO tbl_registration VALUES ('$uid', '$name', '$phone', '$gender', '$pass', '$role', '$status')";
+        $sql1 = "INSERT INTO tbl_registration VALUES (null,'$email', '$name', '$phone', '$gender', '$status')";
         if(mysqli_query($conn, $sql1)){
-           
-            $sql2 = "INSERT INTO tbl_login (`u_Id`,`user_passwrd`,`user_role`,`status`) VALUES ('$uid','$pass','$role','$status')";
-            if(mysqli_query($conn, $sql2)){
-              echo"<script> alert('registration successful');</script>";
-                $_SESSION['islogged']=true;
-                $_SESSION['login_user']= $name;
-                header('Location: index.php');
-                
-            } else{
-                echo "ERROR: Could not able to execute $sql2. " . mysqli_error($conn);
+            $reg_id_res= mysqli_query($conn,"SELECT * from tbl_registration WHERE email='$email'");
+            if($reg_id_res && mysqli_num_rows($reg_id_res)==1){
+
+                $reg_data= mysqli_fetch_array($reg_id_res);
+                $reg_id= $reg_data['reg_id'];
+
+                $sql2 = "INSERT INTO tbl_login VALUES (null,$reg_id,'$email','$pass','$role','$status',0)";
+                if(mysqli_query($conn, $sql2)){
+                echo"<script> alert('registration successful');</script>";
+                    $_SESSION['islogged']=true;
+                    $_SESSION['login_user']= $name;
+                    if($role=='customer'){
+                        header('Location: index.php');
+                    }
+                    else{
+                        header('Location: seller/sellerpage.php');
+                    }
+                    // header('Location: index.php');
+                    
+                } else{
+                    echo "ERROR: Could not able to execute $sql2. " . mysqli_error($conn);
+                }
             }
+            
         }
         else{
             echo "ERROR: Could not able to execute $sql1. " . mysqli_error($conn);
@@ -65,30 +78,36 @@ if(isset($_SESSION['islogged'])){
     }
 
     if(isset($_POST['login-submit'])){
-        $uid = $_POST['uid'];
-        $role=$_POST['role'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         $pass=md5($password);
 
-        $login_sql= "SELECT * FROM tbl_login WHERE u_Id='$uid' AND user_passwrd='$pass' AND user_role='$role'";
+        $login_sql= "SELECT * FROM tbl_login WHERE email='$email' AND user_passwrd='$pass'";
         $logress=mysqli_query($conn,$login_sql);
         //echo($logress);
-        if (mysqli_num_rows($logress) === 1) {
-            $details_sql= "SELECT * FROM tbl_registration WHERE u_Id='$uid'";
+        if (mysqli_num_rows($logress) == 1) {
+            $details_sql= "SELECT * FROM tbl_registration WHERE email='$email'";
             $detailsres=mysqli_query($conn,$details_sql);
             if($detailsres){
                 $row=mysqli_fetch_array( $detailsres);
                 $_SESSION['islogged']=true;
-             $_SESSION['login_user']= $row['name'];  // Initializing Session with value of PHP Variable
-             echo "<script>alert('Login Successful !!')</script>";
-                header('Location: index.php');
+                $_SESSION['login_user']= $row['name'];  // Initializing Session with value of PHP Variable
+                echo "<script>window.alert('Login Successful !!')</script>";
+                //header('Location: index.php');
+
+                $log_details= mysqli_fetch_array($logress);
+                $role= $log_details['user_role'];
+                if($role=='customer'){
+                    header('Location: index.php');
+                }
+                else{
+                    header('Location: seller/sellerpage.php');
+                }
+
             }
-            // if($role=='customer'){
-            //     header('Location: customer/index.php');
-            // }
-            // else if($role=='seller'){
-            //     header('Location: seller/index.php');
-            // }
+            //   else if($role=='seller'){
+            //       header('Location: seller/sellerpage.php');
+            //  }
             /*session_start();
             $_SESSION["id"] = $row['id'];
             $_SESSION["name"] = $row['name'];*/
@@ -105,23 +124,23 @@ if(isset($_SESSION['islogged'])){
     <div class="container">
         <div class="forms">
             <div class="form login">
-                <span class="title">Login</span>
+                <span class="title" style="color: #eaeaea">Login</span>
 
                 <form action="login.php" method="POST">
 
-                    <div class="custom_select" id="role-div" style="margin-left: 0px;">
-                        <i class="fa fa-tasks icon"></i>
-                        <select name="role" id="role" required>
-                            <option value="" disabled selected>Select your role</option>
-                            <option value="admin">Admin</option>
-                            <option value="customer">Customer</option>
-                            <option value="seller">Seller</option>
-                            <option value="delivary_agent">Delivary Agent</option>
-                        </select>
-                    </div>
+                    <!-- <div class="custom_select" id="role-div" style="margin-left: 0px;"> -->
+                        <!-- <i class="fa fa-tasks icon"></i> -->
+                        <!-- <select name="role" id="role" required> -->
+                            <!-- <option value="" disabled selected>Select your role</option> -->
+                            <!-- <option value="admin">Admin</option> -->
+                            <!-- <option value="customer">Customer</option> -->
+                            <!-- <option value="seller">Seller</option> -->
+                            <!-- <option value="delivary_agent">Delivary Agent</option> -->
+                        <!-- </select> -->
+                    <!-- </div> -->
 
                     <div class="input-field">
-                        <input type="email" id="email" name="uid" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
@@ -141,7 +160,7 @@ if(isset($_SESSION['islogged'])){
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
 
-                        <a href="../mobiletemplate/resetpassFolder/forgot-password.php" class="text">Forgot password?</a>
+                        <a href="../ProjectMobilestore/resetpassFolder/forgot-password.php" class="text">Forgot password?</a>
                     </div>
 
                     <div class="input-field button">
@@ -158,7 +177,7 @@ if(isset($_SESSION['islogged'])){
 
             <!-- Registration Form -->
             <div class="form signup">
-                <span class="title">Registration</span>
+                <span class="title" style="color: #eaeaea">Registration</span>
 
                 <form action="login.php" method="POST" onsubmit="return validate();">
 
@@ -172,7 +191,7 @@ if(isset($_SESSION['islogged'])){
                     </div>
 
                     <div class="input-field" id="lastname-div">
-                        <input type="text" id="reg_lastname" name="lastname" placeholder="Enter your last name" required pattern="[a-zA-Z]{3,30}"  
+                        <input type="text" id="reg_lastname" name="lastname" placeholder="Enter your last name" required pattern="[a-zA-Z]{1,30}"  
                         oninvalid="setCustomValidity('Invalid Username !!')" 
                         oninput="setCustomValidity('')"
                         maxlength="30">
@@ -183,7 +202,7 @@ if(isset($_SESSION['islogged'])){
 
                     <div class="signup-input-div">
                         <div class="input-field" id="email-div">
-                            <input type="email" id="reg_email" name="uid" placeholder="Enter your email" required  oninvalid="setCustomValidity('Invalid Username !!')" 
+                            <input type="email" id="reg_email" name="email"  placeholder="Enter your email" required  oninvalid="setCustomValidity('Invalid Username !!')" 
                         oninput="setCustomValidity('')"
                         maxlength="30">
                             <i class="uil uil-envelope icon"></i>
@@ -209,8 +228,8 @@ if(isset($_SESSION['islogged'])){
                             <select name="role" id="reg_role" required>
                                 <option value="" disabled selected>Select your role</option>
                                 <option value="customer">Customer</option>
-                                <option value="seller">Seller</option>
-                                <option value="delivary_agent">Delivary Agent</option>
+                                <option value="seller">Seller</option> 
+                                <option value="delivary_agent">Delivary Agent</option> 
                             </select>
                         </div>
                     </div>

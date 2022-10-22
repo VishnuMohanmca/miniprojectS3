@@ -1,12 +1,3 @@
-<?php
-    session_start();
-    if(isset($_SESSION['islogged'])){
-        $islogged=$_SESSION['islogged'];
-    }
-    else{
-        $islogged=false;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
 
-    <title> Mobile Store </title>
+    <title> MobiStore </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,8 +42,6 @@
                         <ul class="left-info">
                             <li><a href="#"><i class="fa fa-envelope"></i>mobistore2020@gmail.com</a></li>
                             <li><a href="#"><i class="fa fa-phone"></i>7025614019</a></li>
-
-
                         </ul>
                     </div>
 
@@ -67,83 +56,10 @@
                 </div>
             </div>
         </div>
+        <?php
+        include('navigation.php');
+        ?>
 
-        <header class=" ">
-            <nav class="navbar navbar-expand-lg ">
-                <div class="container ">
-                    <a class="navbar-brand " href="index.php ">
-                        <h2><img src="../mobiletemplate/images/mobistore_logo_img.png" alt=""><em></em></h2>
-                    </a>
-                    <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarResponsive " aria-controls="navbarResponsive " aria-expanded="false " aria-label="Toggle navigation ">
-            <span class="navbar-toggler-icon "></span>
-          </button>
-                    <div class="collapse navbar-collapse " id="navbarResponsive ">
-                        <ul class="navbar-nav ml-auto ">
-                            <li class="nav-item active ">
-                                <a class="nav-link " href="index.php ">Home
-                  <span class="sr-only ">(current)</span>
-                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link " href="products.php ">Products</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link " href="brands.php ">Brands</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link " href="checkout.php ">Checkout</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about.php">About Us</a>
-                                <a class="dropdown-item" href="blog.php">Blog</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                                <a class="dropdown-item" href="terms.php">Terms</a>
-                            </div>
-                        </li>
-                            <li class="nav-item ">
-                                <a class="nav-link " href="contact.php ">Contact Us</a>
-                            </li>
-
-                            <?php
-                                if($islogged==false){
-                                    echo '
-                                        <li class="nav-item ">
-                                            <a class="nav-link " href="login.php">Login</a>
-                                        </li>
-                                    ';
-                                }
-                            ?>
-
-                            <?php
-                                if($islogged==true){
-                                    echo '
-                                        <li class="nav-item ">
-                                            <a class="nav-link " href="logout.php ">Logout</a>
-                                        </li>
-                                    ';
-                                }
-                            ?>
-                            
-                            <?php
-                                if($islogged==true){
-                                    echo '
-                                        <li>
-                                            <p class="nav-link" style="color: white;">
-                                                '.$_SESSION["login_user"].'
-                                            </p>
-                                        </li>
-                                    ';
-                                }
-                            ?>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
 
         <!-- Page Content -->
         <!-- Banner Starts Here -->
@@ -156,7 +72,7 @@
                             <h6></h6>
                             <h4> <br> </h4>
                             <p>.</p>
-                            <!--<a href="products.php " class="filled-button ">Products</a>!-->
+                            <!-- <a href="products.php " class="filled-button ">Products</a>!--> -->
                         </div>
                     </div>
                 </div>
@@ -218,7 +134,7 @@
                             <div class="down-content ">
                                 <h4></h4>
                                 <div style="margin-bottom:10px; ">
-                                    <span> <del><sup>$</sup>2000.00</del>  <sup>$</sup>1700.00 </span>
+                                    <!-- <span> <del><sup>$</sup>2000.00</del>  <sup>$</sup>1700.00 </span> -->
                                 </div>
 
                                 <p></p>
@@ -234,7 +150,7 @@
                             <div class="down-content ">
                                 <h4></h4>
                                 <div style="margin-bottom:10px; ">
-                                    <span> <del><sup>$</sup>2000.00</del>  <sup>$</sup>1700.00 </span>
+                                    <!-- <span> <del><sup>$</sup>2000.00</del>  <sup>$</sup>1700.00 </span> -->
                                 </div>
 
                                 <p></p>
@@ -250,7 +166,7 @@
                             <div class="down-content ">
                                 <h4></h4>
                                 <div style="margin-bottom:10px; ">
-                                    <span> <del><sup>$</sup>2000.00</del>  <sup>$</sup>1700.00 </span>
+                                    <!-- <span> <del><sup>$</sup>2000.00</del>  <sup>$</sup>1700.00 </span> -->
                                 </div>
 
                                 <p></p>
@@ -331,8 +247,8 @@
 
                             <div class="testimonial-item ">
                                 <div class="inner-content ">
-                                    <h4>George Walker</h4>
-                                    <span>Chief Financial Analyst</span>
+                                    <!-- <h4>George Walker</h4> -->
+                                    <!-- <span>Chief Financial Analyst</span> -->
                                     <p></p>
                                 </div>
                                 <img src="http://placehold.it/60x60 " alt=" ">
@@ -340,8 +256,8 @@
 
                             <div class="testimonial-item ">
                                 <div class="inner-content ">
-                                    <h4>John Smith</h4>
-                                    <span>Market Specialist</span>
+                                    <!-- <h4>John Smith</h4> -->
+                                    <!-- <span>Market Specialist</span> -->
                                     <p></p>
                                 </div>
                                 <img src="http://placehold.it/60x60 " alt=" ">
@@ -349,8 +265,8 @@
 
                             <div class="testimonial-item ">
                                 <div class="inner-content ">
-                                    <h4>David Wood</h4>
-                                    <span>Chief Accountant</span>
+                                    <!-- <h4>David Wood</h4> -->
+                                    <!-- <span>Chief Accountant</span> -->
                                     <p></p>
                                 </div>
                                 <img src="http://placehold.it/60x60 " alt=" ">
@@ -358,8 +274,8 @@
 
                             <div class="testimonial-item ">
                                 <div class="inner-content ">
-                                    <h4>Andrew Boom</h4>
-                                    <span>Marketing Head</span>
+                                    <!-- <h4>Andrew Boom</h4> -->
+                                    <!-- <span>Marketing Head</span> -->
                                     <p></p>
                                 </div>
                                 <img src="http://placehold.it/60x60 " alt=" ">
@@ -494,7 +410,7 @@
                 <div class="row ">
                     <div class="col-md-12 ">
                         <p>
-                            Copyright © 2022 Mobistore : <a href=>mobistore.com</a>
+                            Copyright © 2022  <a href=>mobistore.com</a>
                         </p>
                     </div>
                 </div>

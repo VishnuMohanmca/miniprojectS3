@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title> Mobile Store Website </title>
+    <title> MobiStore </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <h2>Mobile Store<em> Website</em></h2>
+                    <h2>Mobile Store<em></em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -106,7 +106,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Products</h1>
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <!-- <span>Lorem ipsum dolor sit amet.</span> -->
                 </div>
             </div>
         </div>
@@ -119,14 +119,14 @@
                     <div class="service-item">
                         <img src="assets/images/product-1-720x480.jpg" alt="">
                         <div class="down-content">
-                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>
                       <del><sup>$</sup>1999 </del> &nbsp; <sup>$</sup>1779
                   </span>
                             </div>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis asperiores eveniet iure impedit soluta aliquid. </p>
+                            <!-- <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis asperiores eveniet iure impedit soluta aliquid. </p> -->
                             <a href="product-details.php" class="filled-button">View More</a>
                         </div>
                     </div>
@@ -138,14 +138,14 @@
                     <div class="service-item">
                         <img src="assets/images/product-2-720x480.jpg" alt="">
                         <div class="down-content">
-                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>
                       <del><sup>$</sup>1999 </del> &nbsp; <sup>$</sup>1779
                   </span>
                             </div>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit itaque delectus laboriosam quas veniam. </p>
+                            <!-- <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit itaque delectus laboriosam quas veniam. </p> -->
                             <a href="product-details.php" class="filled-button">View More</a>
                         </div>
                     </div>
@@ -157,14 +157,14 @@
                     <div class="service-item">
                         <img src="assets/images/product-3-720x480.jpg" alt="">
                         <div class="down-content">
-                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>
                       <del><sup>$</sup>1999 </del> &nbsp; <sup>$</sup>1779
                   </span>
                             </div>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eius at unde natus, sit possimus. </p>
+                            <!-- <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eius at unde natus, sit possimus. </p> -->
                             <a href="product-details.php" class="filled-button">View More</a>
                         </div>
                     </div>
@@ -176,14 +176,14 @@
                     <div class="service-item">
                         <img src="assets/images/product-4-720x480.jpg" alt="">
                         <div class="down-content">
-                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>
                       <del><sup>$</sup>1999 </del> &nbsp; <sup>$</sup>1779
                   </span>
                             </div>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptatibus cupiditate repudiandae hic odio quas. </p>
+                            <!-- <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptatibus cupiditate repudiandae hic odio quas. </p> -->
                             <a href="product-details.php" class="filled-button">View More</a>
                         </div>
                     </div>
@@ -195,14 +195,14 @@
                     <div class="service-item">
                         <img src="assets/images/product-5-720x480.jpg" alt="">
                         <div class="down-content">
-                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>
                       <del><sup>$</sup>1999 </del> &nbsp; <sup>$</sup>1779
                   </span>
                             </div>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat in a repellendus nobis! Iure, eveniet! </p>
+                            <!-- <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat in a repellendus nobis! Iure, eveniet! </p> -->
                             <a href="product-details.php" class="filled-button">View More</a>
                         </div>
                     </div>
@@ -214,14 +214,14 @@
                     <div class="service-item">
                         <img src="assets/images/product-6-720x480.jpg" alt="">
                         <div class="down-content">
-                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>
                       <del><sup>$</sup>1999 </del> &nbsp; <sup>$</sup>1779
                   </span>
                             </div>
 
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quis quam porro. Sint, in, at. </p>
+                            <!-- <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quis quam porro. Sint, in, at. </p> -->
                             <a href="product-details.php" class="filled-button">View More</a>
                         </div>
                     </div>
@@ -265,8 +265,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 footer-item">
-                    <h4>Mobile Store</h4>
-                    <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+                    <h4>Mobi Store</h4>
+                    <!-- <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p> -->
                     <ul class="social-icons">
                         <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -276,12 +276,12 @@
                 <div class="col-md-3 footer-item">
                     <h4>Useful Links</h4>
                     <ul class="menu-list">
-                        <li><a href="#">Vivamus ut tellus mi</a></li>
+                        <!-- <li><a href="#">Vivamus ut tellus mi</a></li>
                         <li><a href="#">Nulla nec cursus elit</a></li>
                         <li><a href="#">Vulputate sed nec</a></li>
                         <li><a href="#">Cursus augue hasellus</a></li>
                         <li><a href="#">Lacinia ac sapien</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="col-md-3 footer-item">
                     <h4>Additional Pages</h4>
@@ -331,7 +331,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2020 <a href="https://www.mobistore.com/">mobistore.com</a>
                     </p>
                 </div>
             </div>

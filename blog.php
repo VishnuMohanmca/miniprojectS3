@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Mobile Store Website Template</title>
+    <title>mobistore.com </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Read our Blog</h1>
-                    <span>Lorem ipsum dolor sit amet consectetur</span>
+                    <!-- <span>Lorem ipsum dolor sit amet consectetur</span> -->
                 </div>
             </div>
         </div>
@@ -116,11 +116,11 @@
                     <section class='tabs-content'>
                         <article id='tabs-1'>
                             <img src="assets/images/blog-image-1-940x460.jpg" alt="">
-                            <h4><a href="blog-details.php">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></h4>
+                            <!-- <h4><a href="blog-details.php">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>John Doe &nbsp;|&nbsp; 27.07.2020 10:10 &nbsp;|&nbsp; 15 comments</span>
                             </div>
-                            <p>Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante, quis posuere nibh vestibulum sit amet.</p>
+                            <!-- <p>Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante, quis posuere nibh vestibulum sit amet.</p> -->
                             <br>
                             <div>
                                 <a href="blog-details.php" class="filled-button">Continue Reading</a>
@@ -133,11 +133,11 @@
 
                         <article id='tabs-2'>
                             <img src="assets/images/blog-image-2-940x460.jpg" alt="">
-                            <h4><a href="blog-details.php">Mauris lobortis quam id dictum dignissim</a></h4>
+                            <!-- <h4><a href="blog-details.php">Mauris lobortis quam id dictum dignissim</a></h4> -->
                             <div style="margin-bottom:10px;">
                                 <span>John Doe &nbsp;|&nbsp; 27.07.2020 10:10 &nbsp;|&nbsp; 15 comments</span>
                             </div>
-                            <p>Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante, quis posuere nibh vestibulum sit amet</p>
+                            <!-- <p>Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante, quis posuere nibh vestibulum sit amet</p> -->
                             <br>
                             <div>
                                 <a href="blog-details.php" class="filled-button">Continue Reading</a>
@@ -160,21 +160,21 @@
 
                     <ul>
                         <li>
-                            <h5 style="margin-bottom:10px;"><a href="blog-details.php">Dolorum corporis ullam, reiciendis inventore est repudiandae</a></h5>
+                            <!-- <h5 style="margin-bottom:10px;"><a href="blog-details.php">Dolorum corporis ullam, reiciendis inventore est repudiandae</a></h5> -->
                             <small><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
                         </li>
 
                         <li><br></li>
 
                         <li>
-                            <h5 style="margin-bottom:10px;"><a href="blog-details.php">Culpa ab quasi in rerum dolorum impedit expedita</a></h5>
+                            <!-- <h5 style="margin-bottom:10px;"><a href="blog-details.php">Culpa ab quasi in rerum dolorum impedit expedita</a></h5> -->
                             <small><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
                         </li>
 
                         <li><br></li>
 
                         <li>
-                            <h5 style="margin-bottom:10px;"><a href="blog-details.php">Explicabo soluta corrupti dolor doloribus optio dolorum</a></h5>
+                            <!-- <h5 style="margin-bottom:10px;"><a href="blog-details.php">Explicabo soluta corrupti dolor doloribus optio dolorum</a></h5> -->
 
                             <small><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
                         </li>
@@ -195,7 +195,7 @@
             <div class="row">
                 <div class="col-md-3 footer-item">
                     <h4>Mobile Store</h4>
-                    <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
+                    <!-- <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p> -->
                     <ul class="social-icons">
                         <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -205,11 +205,11 @@
                 <div class="col-md-3 footer-item">
                     <h4>Useful Links</h4>
                     <ul class="menu-list">
-                        <li><a href="#">Vivamus ut tellus mi</a></li>
+                        <!-- <li><a href="#">Vivamus ut tellus mi</a></li>
                         <li><a href="#">Nulla nec cursus elit</a></li>
                         <li><a href="#">Vulputate sed nec</a></li>
                         <li><a href="#">Cursus augue hasellus</a></li>
-                        <li><a href="#">Lacinia ac sapien</a></li>
+                        <li><a href="#">Lacinia ac sapien</a></li> -->
                     </ul>
                 </div>
                 <div class="col-md-3 footer-item">
@@ -260,7 +260,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2020 : <a href="https://www.mobistore.com/">Mobistore.com</a>
                     </p>
                 </div>
             </div>

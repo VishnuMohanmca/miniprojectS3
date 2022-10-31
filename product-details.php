@@ -1,3 +1,29 @@
+<?php
+
+    include 'dbconn.php';
+    if(isset($_GET['pid'])){
+        $prod_id= $_GET['pid'];
+        $product_details_query= mysqli_query($conn,"SELECT * from tbl_products WHERE product_id='$prod_id' AND prod_status!=0");
+        if($product_details_query && mysqli_num_rows($product_details_query)==1){
+            $presult= mysqli_fetch_row($product_details_query);
+            $pdes= $presult[14];
+            $pimg= $presult[5];
+            $pname= $presult[2];
+        }
+        else{
+            $pdes= "Sample Description";
+            $pimg= "seller/photos/Samsung Galaxy M10.jpg";
+            $pname= "Sample Name";
+
+        }
+    }
+    else{
+        header('Location: products.php');
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,46 +80,7 @@
         </div>
     </div>
 
-    <header class="">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">
-                    <h2>Mobi Store<em></em></h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="products.php">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="checkout.php">Checkout</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about.php">About Us</a>
-                                <a class="dropdown-item" href="blog.php">Blog</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                                <a class="dropdown-item" href="terms.php">Terms</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php include 'navigation.php'; ?>
 
     <!-- Page Content -->
     <div class="page-heading header-text">
@@ -102,7 +89,6 @@
                 <div class="col-md-12">
                     <h1><small><del><sup></sup> </del></small> &nbsp; <sup></sup></h1>
                     <span>
-                
             </span>
                 </div>
             </div>
@@ -122,7 +108,7 @@
                     <div class="row">
                         <div class="col-sm-4 col-6">
                             <div>
-                                <!-- <img src="../mobiletemplate/images/vivo.jfif" alt="" class="img-fluid"> -->
+                                <img src="<?php echo $pimg; ?>" alt="" class="img-fluid">
                             </div>
                             <br>
                         </div>
@@ -147,11 +133,11 @@
                     <div class="sidebar-item recent-posts">
                         <div class="sidebar-heading">
                             <h4>Info</h4>
+                            <h2><?php echo $pname; ?></h2>
                         </div>
 
                         <div class="content">
-                            <p>
-                            </p>
+                            <p></p>
                         </div>
                     </div>
 
@@ -168,11 +154,11 @@
                                 <div class="form-group">
                                     <label for="">Extra 1</label>
                                     <select class="form-control">
-                      <option value="0">Extra A</option>
-                      <option value="0">Extra B</option>
-                      <option value="0">Extra C</option>
-                      <option value="0">Extra D</option>
-                    </select>
+                                        <option value="0">Extra A</option>
+                                        <option value="0">Extra B</option>
+                                        <option value="0">Extra C</option>
+                                        <option value="0">Extra D</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -200,10 +186,7 @@
 
             <h4>Description</h4>
 
-            <!-- <p>The new Vivo Y21T is one of the most happening devices for be launched in recent times. Multitasking between all kinds of apps is piece of cake for the Y21T. It's powered by the Qualcomm Snapdragon 680 processor, and 4GB of RAM. The Vivo Y21T
-                has a stunning 6.58-inch display running a high-resolution of 1080 x 2408px. At a time where photos span multiple megabytes and movies even more, the Y21T comes with ample space - 128GB.Storage can be expanded up to 1TB using the microSD
-                card slot. The rear camera setup consists of an impressive 50MP sensor, alongside two others, one for macros and the other for bokehs.
-            </p> -->
+            <p><?php echo $pdes; ?></p>
 
 
 

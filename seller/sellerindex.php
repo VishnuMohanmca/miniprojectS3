@@ -44,7 +44,7 @@
     <table class="table">
     <thead>
       <tr>
-        <th>Product Id</th>
+        <!-- <th>Product Id</th> -->
         <th>Product Name</th>
         <th>Product Price</th>
         <th>Offers</th>
@@ -64,14 +64,23 @@
           die("Invalid query!");
         }
         while($row=$result->fetch_assoc()){
+
+          $url = $row['prod_img'];
+          $formatted_url = filter_var($url, FILTER_SANITIZE_URL);
+          if (filter_var($formatted_url, FILTER_VALIDATE_URL) !== false) {
+            $pimage= $url;
+          } else {
+            $pimage= "../".$url;
+          }
+
           echo "
       <tr>
-        <th>$row[product_id]</th>
+       
         <td><p id='s_name'>$row[prod_name]</p></td>
         <td>$row[prod_price]</td>
         <td>$row[prod_offers]</td>
         <td><p id='s_feature'>$row[prod_feature]</p></td>
-        <td><img id='s_img' src='$row[prod_img]' alt='$row[prod_img]'></td>
+        <td><img id='s_img' src='$pimage' alt='$row[prod_img]'></td>
         <td>
                   <a class='btn btn-success' href='edit.php?pid=$row[product_id]'>Edit</a>
                   <a class='btn btn-danger' href='delete.php?pid=$row[product_id]'>Delete</a>

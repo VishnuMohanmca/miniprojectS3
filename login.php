@@ -46,6 +46,19 @@ if(isset($_SESSION['islogged'])){
         $role=$_POST['role'];
         $status=1;
         $sql1 = "INSERT INTO tbl_registration VALUES (null,'$email', '$name', '$phone', '$gender', '$status')";
+    
+        $sql3="select * from tbl_registration where (email='$email');";
+
+        $res=mysqli_query($conn,$sql3);
+  
+        if (mysqli_num_rows($res) > 0) {
+          
+          $row = mysqli_fetch_assoc($res);
+          if($email==isset($row['email']))
+          {
+                  echo "<script> alert('email already exists');</script>";
+          }
+          }
         if(mysqli_query($conn, $sql1)){
             $reg_id_res= mysqli_query($conn,"SELECT * from tbl_registration WHERE email='$email'");
             if($reg_id_res && mysqli_num_rows($reg_id_res)==1){
@@ -59,10 +72,10 @@ if(isset($_SESSION['islogged'])){
                     $_SESSION['islogged']=true;
                     $_SESSION['login_user']= $name;
                     if($role=='customer'){
-                        header('Location: index.php');
+                        echo"<script>window.location.href='index.php';</script>";
                     }
                     else{
-                        header('Location: seller/sellerpage.php');
+                        echo"<script>window.location.href='../seller/sellerindex.php';</script>";
                     }
                     // header('Location: index.php');
                     
@@ -108,9 +121,9 @@ if(isset($_SESSION['islogged'])){
             //   else if($role=='seller'){
             //       header('Location: seller/sellerpage.php');
             //  }
-            /*session_start();
-            $_SESSION["id"] = $row['id'];
-            $_SESSION["name"] = $row['name'];*/
+            session_start();
+            $_SESSION["id"] = $row['seller_id'];
+            $_SESSION["name"] = $row['name'];
              // Store Session Data
 
          
@@ -140,7 +153,7 @@ if(isset($_SESSION['islogged'])){
                     <!-- </div> -->
 
                     <div class="input-field">
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="off" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
@@ -183,7 +196,7 @@ if(isset($_SESSION['islogged'])){
 
                 <div class="signup-input-div">
                     <div class="input-field" id="firstname-div">
-                        <input type="text" id="reg_firstname" name="firstname" placeholder="Enter your first name" required pattern="[a-zA-Z]{3,30}"  
+                        <input type="text" id="reg_firstname" name="firstname" autocomplete="off" placeholder="Enter your first name" required pattern="[a-zA-Z]{3,30}"  
                         oninvalid="setCustomValidity('Invalid Username !!')" 
                         oninput="setCustomValidity('')"
                         maxlength="30">
@@ -191,7 +204,7 @@ if(isset($_SESSION['islogged'])){
                     </div>
 
                     <div class="input-field" id="lastname-div">
-                        <input type="text" id="reg_lastname" name="lastname" placeholder="Enter your last name" required pattern="[a-zA-Z]{1,30}"  
+                        <input type="text" id="reg_lastname" name="lastname" placeholder="Enter your last name" autocomplete="off"  required pattern="[a-zA-Z]{1,30}"  
                         oninvalid="setCustomValidity('Invalid Username !!')" 
                         oninput="setCustomValidity('')"
                         maxlength="30">
@@ -202,13 +215,13 @@ if(isset($_SESSION['islogged'])){
 
                     <div class="signup-input-div">
                         <div class="input-field" id="email-div">
-                            <input type="email" id="reg_email" name="email"  placeholder="Enter your email" required  oninvalid="setCustomValidity('Invalid Username !!')" 
+                            <input type="email" id="reg_email" name="email"  placeholder="Enter your email" autocomplete="off"  required  oninvalid="setCustomValidity('Invalid Email id !!')" 
                         oninput="setCustomValidity('')"
                         maxlength="30">
                             <i class="uil uil-envelope icon"></i>
                         </div>
                         <div class="input-field" id="phone-div">
-                            <input type="number" id="reg_phone" name="phone" min="10" maxlength="10" placeholder="Enter your number" required>
+                            <input type="number" id="reg_phone" name="phone" min="10" maxlength="10" autocomplete="off"  placeholder="Enter your number" required>
                             <i class="uil uil-phone icon"></i>
                         </div>
                     </div>

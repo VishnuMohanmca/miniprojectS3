@@ -12,7 +12,28 @@ body {
     background: #d0d6eb;
 }
 
+#main-div {
+    display: flex;
+}
+
+#left-side {
+    flex: 1;
+}
+
+#right-side {
+    flex: 3;
+}
+
 .wrapper .sidebar {
+    background: rgb(2, 2, 2);
+    width: 225px;
+    height: 100vh;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+
+/* .wrapper .sidebar {
     background: rgb(2, 2, 2);
     position: fixed;
     top: 0;
@@ -21,7 +42,7 @@ body {
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
-}
+} */
 
 .wrapper .sidebar .profile {
     margin-bottom: 30px;

@@ -1,23 +1,30 @@
 <?php
     include "../dbconn.php";
+    $targetDir = "../seller/photos/";
+    $finalpath = "seller/photos/";
     if(isset($_POST['submit'])){
         $pname = $_POST['pname'];
         $pprice = $_POST['pprice'];
         $poffer = $_POST['poffer'];
         $pfeat = $_POST['pfeature'];
-        //$img=$_FILES["pimage"]["name"];
-	//echo $img;
-        // $pimg = $_POST['pimage'];
-        //  print_r($_FILES);
-        //  $img=$_FILES["pimage"]["name"];
-        //  $pimg=$_FILES["pimage"]["type"];
-        //$img2=$_FILES["photo"]["full_path"];
-        // $img3=$_FILES["photo"]["size"];
+        $pimg=$_FILES["pimage"]["name"];
+        $targetImage = $targetDir . $pimg;
+        $finaltargetImage = $finalpath . $pimg;
+
+	      //echo $img;
+        //$pimg = $_POST['pimage'];
+        //print_r($_FILES);
+        // $img=$_FILES["pimage"]["name"];
+        // $img2=$_FILES["pimage"]["full_path"];
+        // $img3=$_FILES["pimage"]["type"];
+        
+        //$pimg=$_FILES["pimage"]["type"];
+        //$img2=$_FILES["pimage"]["full_path"];
+        //$img3=$_FILES["pimage"]["size"];
        
-          //move_uploaded_file($_FILES["pimage"]["tmp_name"],"images/" .$pimg);
-          //move_uploaded_file($_FILES["pimage"]["tmp_name"],"photos/".$img);
-	//$result=mysqli_query($conn,"INSERT INTO `tbl_products`(`prod_name`, `prod_price`, `prod_offers`,`prod_feature`,`prod_img`) VALUES ( '$pname', '$pprice', '$poffer','$pfeat','$img')";
-        $q = "INSERT INTO tbl_products (product_id,seller_Id,prod_name,prod_price, prod_offers,prod_feature) VALUES (null,1,'$pname', '$pprice', '$poffer','$pfeat')";
+        move_uploaded_file($_FILES["pimage"]["tmp_name"],$targetImage);
+        //move_uploaded_file($_FILES["pimage"]["tmp_name"],"../seller/photos/".$img);
+        $q = "INSERT INTO tbl_products (product_id,seller_Id,prod_name,prod_price, prod_offers,prod_feature,prod_img) VALUES (null,1,'$pname', '$pprice', '$poffer','$pfeat','$finaltargetImage')";
         $query = mysqli_query($conn,$q);
         if($query){
             echo "<script>alert('New Item Added Successfully...');</script>";

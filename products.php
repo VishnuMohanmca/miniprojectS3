@@ -112,7 +112,7 @@
                         $product_sql= "SELECT * from tbl_products where prod_brand='$filter'";
                     }
                     else{
-                        $product_sql= "SELECT * from tbl_products";
+                        $product_sql= "SELECT * from tbl_products WHERE prod_status!=0";
 
                         $results_per_page = 15;
 
@@ -135,13 +135,14 @@
                         $this_page_first_result = ($page-1)*$results_per_page;
 
                         // retrieve selected results from database and display them on page
-                        $product_sql='SELECT * FROM tbl_products LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+                        $product_sql='SELECT * FROM tbl_products WHERE prod_status!=0 LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
                     }
                     
                     $prod_query= mysqli_query($conn, $product_sql);
 
                     while ($row = mysqli_fetch_array($prod_query)) {
 
+                        $prod_id= $row[0];
                         $prod_name= $row[2];
                         $prod_img= $row[5];
                         $prod_offer= $row[8];
@@ -152,7 +153,7 @@
                                 <div class="col-md-4">
                                     <div class="service-item">
                                         <div id="product_img_div">
-                                            <img id="product_img" src="'.$prod_img.'" alt="'.$prod_name.'">
+                                            <img src= "'.$prod_img.'" id="product_img" alt="'.$prod_name.'">
                                         </div>
                                         <div class="down-content">
                                             <h4 id="product_name">'.$prod_name.'</h4>
@@ -162,7 +163,7 @@
                                             </div>
 
                                             <p id="product_feat">'.$prod_feature.'</p>
-                                            <a href="product-details.php" class="filled-button">View More</a>
+                                            <a href="product-details.php?pid='.$prod_id.'" class="filled-button">View More</a>
                                         </div>
                                     </div>
 
@@ -177,27 +178,49 @@
             </div>
             <nav>
                 <ul class="pagination pagination-lg justify-content-center">
-                    <!-- <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">«</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li> -->
-
+                
                     <?php
-                        for ($page=1;$page<=$number_of_pages;$page++) {
-                            echo '<li class="page-item"><a class="page-link" href="products.php?page='.$page.'">'.$page.'</a></li>';
+
+                        if(isset($_GET['page']))
+                            $curr_page= $_GET['page'];
+                        else
+                            $curr_page= 1;
+
+                        if($curr_page > 1){
+                            echo '
+                                <li class="page-item">
+                                    <a class="page-link" href="products.php?page='.($curr_page-1).'" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+
+                                <li id="pageitem'.($curr_page-1).'" class="page-item"><a id="pagelink'.($curr_page-1).'" class="page-link" href="products.php?page='.($curr_page-1).'">'.($curr_page-1).'</a></li>
+                            ';
                         }
+
+                        echo '<li id="pageitem'.$curr_page.'" class="page-item"><a id="pagelink'.$curr_page.'" class="page-link">'.$curr_page.'</a></li>';
+                        $docid= "pagelink".$curr_page;
+                        echo "<script>
+                            document.getElementById('$docid').style.backgroundColor= '#94d924';
+                            document.getElementById('$docid').style.color= 'white';
+                        </script>";
+
+                        $number_of_results= isset($number_of_results) ? $number_of_results : 1;
+                        if($curr_page < $number_of_results){
+                            echo '
+                                <li id="pageitem'.($curr_page+1).'" class="page-item"><a id="pagelink'.($curr_page+1).'" class="page-link" href="products.php?page='.($curr_page+1).'">'.($curr_page+1).'</a></li>
+                                
+                                <li class="page-item">
+                                    <a class="page-link" href="products.php?page='.($curr_page+1).'" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            ';
+                        }
+                        
                     ?>
-                    
-                    <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                    <!-- <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">»</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li> -->
                 </ul>
             </nav>
             <br>

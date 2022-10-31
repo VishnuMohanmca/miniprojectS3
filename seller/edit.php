@@ -1,5 +1,6 @@
 <?php
   include "../dbconn.php";
+ 
   $pid="";
   $pname="";
   $pprice="";
@@ -12,7 +13,7 @@
 
   if($_SERVER["REQUEST_METHOD"]=='GET'){
     if(!isset($_GET['pid'])){
-      header("location:/mobiletemplate/seller/sellerindex.php");
+      header("location:/ProjectMobilestore/seller/sellerindex.php");
       exit;
     }
     $pid = $_GET['pid'];
@@ -20,7 +21,7 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     while(!$row){
-      header("location: /mobiletemplate/seller/sellerindex.php");
+      header("location: /ProjectMobilestore/seller/sellerindex.php");
       exit;
     }
     $pname=$row["prod_name"];
@@ -28,24 +29,53 @@
     $poffer=$row["prod_offers"];
     $pfeature=$row["prod_feature"];
     $pimg=$row["prod_img"];
+   
 
 
   }
+  // $name = $_FILES['pimage']['name'];
+  // $temp_name = $_FILES['pimage']['temp_name'];
+
+  // if (isset($name)) {
+
+  //     if (!empty($name)) {
+  //         $location = '../seller/photos/';
+  //     }
+
+  //     if (move_uploaded_file($temp_name, $location.$name)) {
+  //         echo 'uploaded';
+  //     }
+
+  // } else {
+  //     echo 'please uploaded';
+  // }
+ $targetDir = "../seller/photos/";
+ $finaltargetDir = "seller/photos/";
   if(isset($_POST['submit'])){
     $pid = $_POST["pid"];
     $pname=$_POST["pname"];
     $pprice=$_POST["pprice"];
     $poffer=$_POST["poffer"];
-    $pfeature=$row["prod_feature"];
-    $pimg=$row["prod_img"];
+    $pfeature=$_POST["pfeature"];
+    $pimg=$_FILES["pimage"]["name"];
+    $targetFilePath = $targetDir . $pimg;
+    $finaltargetFile = $finaltargetDir . $pimg;
     
-    
-    $sql = "update tbl_products set prod_name='$pname', prod_price='$pprice', prod_offers='$poffer', prod_feature='$pfeature', prod_img='$pimg' where product_id='$pid'";
-    $result = $conn->query($sql);
-    
+    move_uploaded_file($_FILES["pimage"]["tmp_name"],$targetFilePath);
+    $sql = "update tbl_products set prod_name='$pname', prod_price='$pprice', prod_offers='$poffer', prod_feature='$pfeature',prod_img='$finaltargetFile' where product_id='$pid'";
+    //$result = $conn->query($sql);
+    $result= mysqli_query($conn,$sql);
+    if($result){
+      echo "<script>alert('New Item updated Successfully...');</script>";
+      header('sellerindex.php');
   }
-  
-?>
+  else{
+    echo "<script>alert('Not updated !!');</script>";
+  }
+}
+  ?>
+    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,7 +105,7 @@
     </nav>
  <div class="col-lg-6 m-auto">
  
- <form method="post" action="edit.php">
+ <form method="post" action="edit.php" enctype="multipart/form-data" name="editForm">
  
  <br><br><div class="card">
  
@@ -83,24 +113,24 @@
  <h1 class="text-white text-center">  Update Products </h1>
  </div><br>
 
- <input type="hidden" name="pid" value="<?php echo $pid; ?>" class="form-control"> <br>
+ <input type="hidden" id="pid" name="pid" value="<?php echo $pid; ?>" class="form-control"> <br>
 
  <label> Product Name: </label>
- <input type="text" name="pname" value="<?php echo $pname; ?>" class="form-control"> <br>
+ <input type="text" id="pname" name="pname" value="<?php echo $pname; ?>" class="form-control"> <br>
 
  <label> Product Price: </label>
- <input type="text" name="pprice" value="<?php echo $pprice; ?>" class="form-control"> <br>
+ <input type="text" id="pprice" name="pprice" value="<?php echo $pprice; ?>" class="form-control"> <br>
 
  <label> Offer: </label>
- <input type="text" name="poffer" value="<?php echo $poffer; ?>" class="form-control"> <br>
+ <input type="text" id="poffer" name="poffer" value="<?php echo $poffer; ?>" class="form-control"> <br>
 
  <label> Feature: </label>
- <input type="text" name="pfeature" value="<?php echo $pfeature; ?>" class="form-control"> <br>
+ <input type="text" id="pfeauture" name="pfeature" value="<?php echo $pfeature; ?>" class="form-control"> <br>
 
  <label> Upload Image: </label>
- <input type="file" name="pimage" value="<?php echo $pimg; ?>" class="form-control"> <br>
+ <input type="file" id="pimge" name="pimage" class="form-control"> <br>
 
- <button class="btn btn-success" type="submit" name="submit"> Submit </button><br>
+ <input type="submit" class="btn btn-success" value="edit" name="submit"><br>
  <a class="btn btn-info" type="submit" name="cancel" href="sellerindex.php"> Cancel </a><br>
 
  </div>
